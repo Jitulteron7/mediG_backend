@@ -7,7 +7,7 @@ const router = require('./routes');
 const logger = require('../config/logger');
 const app = express();
 const NAMESPACE = 'SERVER';
-
+const axios = require('axios');
 //middlewares
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
@@ -31,6 +31,33 @@ app.use((req, res, next) => {
 //f7igOHlXSmr1nktp
 //mongodb+srv://Jitul:<password>@cluster0.s5um7ix.mongodb.net/?retryWrites=true&w=majority
 //routes
+app.get("/python", async (req, res, next) => {
+    try {
+        const data = await axios.get("http://127.0.0.1:5000/nodecall")
+        console.log(data, "Data");
+        res.json(data.data)
+
+    } catch (error) {
+        console.log(error, "Error");
+    }
+})
+
+
+app.post("/python", async (req, res, next) => {
+    try {
+        const data = await axios.post("http://127.0.0.1:5000/nodepost",{
+            message:"node python post",
+            status : 200
+        })
+
+        console.log(data, "Data");
+        res.json(data.data)
+
+    } catch (error) {
+        console.log(error, "Error");
+    }
+})
+
 app.use('/', router);
 
 //error handler
