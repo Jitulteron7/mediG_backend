@@ -5,8 +5,8 @@ const twilio = require('twilio');
 
 router.post('/', async (req, res) => {
 
-    const accountSid = process.env.ACCOUNTSID; 
-    const authToken = process.env.AUTHTOKEN; 
+    const accountSid = process.env.ACCOUNTSID;
+    const authToken = process.env.AUTHTOKEN;
 
     const client = new twilio(accountSid, authToken);
 
