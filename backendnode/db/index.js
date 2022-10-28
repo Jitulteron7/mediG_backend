@@ -4,6 +4,7 @@ const { config } = require('../config/configVar');
 const NAMESPACE = 'SERVER';
 
 function connection() {
+
     return mongoose
         .connect(config.mongo.url, config.mongo.options)
         .then((result) => {

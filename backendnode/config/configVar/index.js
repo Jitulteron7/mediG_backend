@@ -6,6 +6,8 @@ const MONGO_SETUP_OPTIONS = {
     useNewUrlParser: true           
 };
 
+console.log( process.env.MONGO_USERNAME )
+
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'adminUserName';
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD || 'adminUserPassword';
 const MONGO_HOST = process.env.MONG_URL || 'localhost:27017';
