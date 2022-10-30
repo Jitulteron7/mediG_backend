@@ -9,5 +9,5 @@ const SERVER_PORT = process.env.PORT || 8081;
 server.listen(SERVER_PORT, () => {
     console.info(chalk.bgWhite.black.bold(`Connecting to Server on port ${SERVER_PORT}`));
     console.info(chalk.bgWhite.black.bold(`API templted by Jitul Teron`));
-    connect();
+    // connect();
 });

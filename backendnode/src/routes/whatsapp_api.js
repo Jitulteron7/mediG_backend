@@ -14,10 +14,10 @@ router.post('/', async (req, res) => {
     .create({ 
        body: req.body.message_body, 
        from: process.env.SENDER,       
-       to: `whatsapp:${req.body.phone_number}`
+       to: `whatsapp:+918486241192`
      }) 
     .then(message => console.log(message.sid)) 
-    .done();
+    .catch((error)=>console.log(error));
 
     res.json({ message: "working" });
 })
