@@ -1,4 +1,6 @@
+
 from flask import Flask, request, jsonify
+from model import run_ml_app
 
 app = Flask(__name__)
 
@@ -26,6 +28,10 @@ def testnodepost():
     return jsonify(dictData)
      
 
-
+@app.route("/predict",methods=["POST"])
+def predict():
+    data = run_ml_app()
+    return jsonify(data)
+    
 if __name__ == '__main__':
    app.run(debug = True)
